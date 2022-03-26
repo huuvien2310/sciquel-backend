@@ -47,8 +47,19 @@ type Article{
     Quiz: [QA]!
 }
 
-type Users{
+type Tag{
+    id: ID!
+}
 
+type Definition{
+    id: ID!
+}
+
+type Media{
+    id: ID!
+}
+
+type Users{
     UserID: ID!
     UserName: String!
     PasswordHash: String!
@@ -70,8 +81,40 @@ type Users{
     PreferredSectionOrder: [String]!
 }
 
+type Date{
+    Month: String!
+    Day: String!
+    Year: String!
+}
+
 type Subscriptions{
     Email: String!
 }
 
+type Query{
+    users: [Users]!
+}
+
+type Mutation{
+    newUser(
+        UserID: ID!
+        UserName: String!
+        PasswordHash: String!
+        UserEmail: String
+        UserPhoneNumber: String
+        Roles: [Boolean]
+        UserDescription: String
+        SocialMedia: [String]
+        UserImage: String
+        Tags: [String]
+        ArticleIDs: [String]
+        PodcastIDs: [String]
+        VideoIDs: [String]
+        PageBookmarks: [String]
+        TextBookmarks: [String]
+        ImageBookmarks: [String]
+        PreferredLanguages: [String]
+        PreferredSectionOrder: [String]
+    ): Users!
+}
 `

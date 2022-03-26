@@ -4,8 +4,8 @@
   "description": "SciQuel's backend ",
   "main": "index.js",
   "scripts": {
-  	"start":"nodemon index",
-  	"serve": "node index",
+    "start": "nodemon index",
+    "serve": "node index",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -27,6 +27,10 @@
     "express": "^4.17.2",
     "graphql": "^16.3.0",
     "jsonwebtoken": "^8.5.1",
+    "mongodb": "^4.4.1",
     "mongoose": "^6.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
   }
 }
