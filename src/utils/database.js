@@ -2,7 +2,6 @@ const MongoClient = require("mongodb").MongoClient;
 
 const config = require("./config.js");
 
-
 class Database {
   static #singleton;
 
