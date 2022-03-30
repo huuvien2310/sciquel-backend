@@ -1,6 +1,6 @@
 FROM node:14-alpine
 WORKDIR /app
-COPY package.json package-lock.json ./
+COPY ./src/package.json ./src/package-lock.json ./
 RUN npm install
 COPY . ./
-CMD ["npm", "start"]
+CMD ["node", "src/index.js"]
