@@ -8,6 +8,9 @@ services:
     environment:
       BASE_URL: http://localhost:4000/
       MONGO_URI: mongodb://backend-database
+    volumes:
+      - .:/app
+    command: npm start
     networks:
       - backend-networks
     depends_on:
