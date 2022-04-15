@@ -93,6 +93,8 @@ type Subscriptions{
 
 type Query{
     users: [Users]!
+    articles: [Article]!
+    date: [Date]!
 }
 
 type Mutation{

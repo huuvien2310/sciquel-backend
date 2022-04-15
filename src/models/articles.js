@@ -8,6 +8,7 @@ class Articles{
         return articles;
     }
 
+    //TODO: update Mutation schema in typeDefs
     static createArticle(args) {
         const article = { 
             ArticleID: args.ArticleID,
