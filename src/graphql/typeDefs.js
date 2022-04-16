@@ -33,7 +33,7 @@ type Article{
     ArticleContent: String!
     PreviousVersions: [String]!
     ArticleSummary: String!
-    LanguageOptions: [String]! 
+    LanguageOptions: [String]!
     ArticleFormat: Int!
     ArticleMedia: [Media]!
     Tags: [Tag]!
@@ -118,5 +118,20 @@ type Mutation{
         PreferredLanguages: [String]
         PreferredSectionOrder: [String]
     ): Users!
+    newArticle(
+        ArticleID: ID!
+        AuthorID: ID!
+        AuthorName: String!
+        ArticleType: String!
+        ArticleTitle: String!
+        ArticleContent: String!
+        PreviousVersions: [String]!
+        ArticleSummary: String!
+        LanguageOptions: [String]!
+        ArticleFormat: Int!
+        Section: String!
+        Published: Boolean!
+
+    ): Article!    
 }
 `

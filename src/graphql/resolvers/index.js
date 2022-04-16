@@ -8,6 +8,6 @@ module.exports = {
     },
     Mutation: {
         ...usersQueries.Mutation,
-        // ...articlesQueries.Mutation
+        ...articlesQueries.Mutation
     }
 }

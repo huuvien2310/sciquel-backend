@@ -5,8 +5,8 @@ module.exports = {
         articles: () => Articles.getAllArticles()
     },
     Mutation: {
-        // newArticle: (parent, args) => {
-        //     return Articles.createArticle(args);
-        // }
+        newArticle: (parent, args) => {
+            return Articles.createArticle(args);
+        }
     }
 }
