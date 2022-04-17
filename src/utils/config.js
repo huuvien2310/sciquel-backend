@@ -1,5 +1,6 @@
 const config = {
-    MONGO_URI: process.env.MONGO_URI
-}
+  MONGO_URI:
+    "mongodb+srv://duyvu:JYR4jr6DKRliybkm@sciquel.syamb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+};
 
 module.exports = config;
