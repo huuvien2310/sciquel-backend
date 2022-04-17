@@ -23,7 +23,7 @@
   "homepage": "https://github.com/mihir-thakkar-ai/SciQuel-Server#readme",
   "dependencies": {
     "@graphql-tools/schema": "^8.3.8",
-    "apollo-server": "^3.6.2",
+    "apollo-server": "^3.6.7",
     "bcryptjs": "^2.4.3",
     "express": "^4.17.2",
     "graphql": "^16.3.0",
