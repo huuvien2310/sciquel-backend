@@ -29,8 +29,8 @@ class Definitions {
   static async insertDefinitionToArticle(definitionData) {
     const articlesCollection = await getArticlesCollection();
 
-    const result = await articlesCollection.findByIdAndUpdate(
-      definitionData.ArticleID,
+    const result = await articlesCollection.updateOne(
+      {ArticleID: definitionData.ArticleID},
       {
         $push: {
           Definitions: {
@@ -41,7 +41,7 @@ class Definitions {
           },
         },
       },
-      { new: true, useFindAndModify: false }
+      //{ new: true, useFindAndModify: false }
     );
     return result;
   }
