@@ -1,4 +1,5 @@
 const Database = require("../utils/database.js");
+const { ObjectId } = require("mongodb");
 
 class Definitions {
   static async getAllDefinitions() {
@@ -15,22 +16,24 @@ class Definitions {
       Context: args.Context,
       ArticleID: args.ArticleID,
     };
-    Definitions.create(definition);
-    Definitions.insertDefinitionToArticle(definition);
-    return definition;
+
+    return Definitions.create(definition).then((definition) => {
+      Definitions.insertDefinitionToArticle(definition);
+    });
   }
 
   static async create(definitionData) {
     const definitionsCollection = await getDefinitionsCollection();
-    const result = await definitionsCollection.insertOne(definitionData);
-    return result;
+    definitionsCollection.insertOne(definitionData);
+    return definitionData;
   }
 
   static async insertDefinitionToArticle(definitionData) {
     const articlesCollection = await getArticlesCollection();
+    console.log("Article collection is connected.");
 
-    const result = await articlesCollection.updateOne(
-      {ArticleID: definitionData.ArticleID},
+    const result = await articlesCollection.findOneAndUpdate(
+      { _id: ObjectId(definitionData.ArticleID) },
       {
         $push: {
           Definitions: {
@@ -38,11 +41,13 @@ class Definitions {
             Term: definitionData.Term,
             Definition: definitionData.Definition,
             Context: definitionData.Context,
+            ArticleID: args.ArticleID,
           },
         },
       },
-      //{ new: true, useFindAndModify: false }
+      { new: true, useFindAndModify: false }
     );
+    console.log("Definition is inserted to Article.\n");
     return result;
   }
 }

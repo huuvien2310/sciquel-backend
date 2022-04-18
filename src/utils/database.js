@@ -7,7 +7,9 @@ class Database {
 
   static async get() {
     if (Database.#singleton === undefined) {
-      Database.#singleton = new MongoClient(config.MONGO_URI, { useUnifiedTopology: true });
+      Database.#singleton = new MongoClient(config.MONGO_URI, {
+        useUnifiedTopology: true,
+      });
       await Database.#singleton.connect();
     }
     return Database.#singleton;
