@@ -4,8 +4,8 @@
   "description": "SciQuel's backend ",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon -L index.js",
-    "serve": "node index",
+    "start": "node index",
+    "dev": "nodemon -L index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
