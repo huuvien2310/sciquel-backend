@@ -25,6 +25,7 @@
     "@graphql-tools/schema": "^8.3.8",
     "apollo-server": "^3.6.7",
     "bcryptjs": "^2.4.3",
+    "diagnose-endpoint": "^1.1.0",
     "express": "^4.17.2",
     "graphql": "^16.3.0",
     "jsonwebtoken": "^8.5.1",
