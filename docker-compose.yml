@@ -10,7 +10,7 @@ services:
       MONGO_URI: mongodb://backend-database
     volumes:
       - .:/app
-    command: npm dev
+    command: npm run dev
     networks:
       - backend-networks
     depends_on:
